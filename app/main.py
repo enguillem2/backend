@@ -6,8 +6,12 @@ from decouple import config
 app = FastAPI()
 
 origins=[
-    config('FRONTED_URL')
+    config('FRONTED_URL'),
+    config('FRONTED_URL2')
+
 ]
+
+print("origins:",origins)
 
 app.add_middleware(
     CORSMiddleware,
